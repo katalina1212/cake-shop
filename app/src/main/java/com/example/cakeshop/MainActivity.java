@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ListView;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -13,16 +14,59 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class MainActivity extends AppCompatActivity {
 
-    private Button FirebaseButton;
+    private ListView categoryList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        FirebaseButton=findViewById(R.id.Firebase);
-        FirebaseButton.setOnClickListener(new View.OnClickListener() {
+        categoryList = findViewById(R.id.category_list);
+
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference myRef = database.getReference("categories");
+
+        final List<Category> items = new ArrayList<>();
+
+        // myRef.setValue("Hello, World!");
+        // Read from the database
+
+        myRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                // This method is called once with the initial value and again
+                // whenever data at this location is updated.
+                for (DataSnapshot postSnapshot: dataSnapshot.getChildren()) {
+                    Category category = new Category (postSnapshot.getValue(String.class));
+                    items.add(category);
+
+                    // here you can access to name property like university.name
+
+                }
+
+            }
+
+            @Override
+            public void onCancelled(DatabaseError error) {
+                // Failed to read value
+                Log.w("Firebase", "Failed to read value.", error.toException());
+            }
+        });
+
+
+
+        /*items.add(new Category("Cupcakes"));
+        items.add(new Category("Chocolate cakes"));
+        items.add(new Category("Birthday cakes")); */
+
+        categoryList.setAdapter(new CategoryListItemAdapter(this,items ));
+
+
+        /*FirebaseButton.setOnClickListener(new View.OnClickListener() {
             @Override
           public void onClick(View v) {
                  // Write a message to the database
@@ -47,7 +91,7 @@ public class MainActivity extends AppCompatActivity {
                     }
                 });
             }
-        });
+        }); */
 
     }
 
