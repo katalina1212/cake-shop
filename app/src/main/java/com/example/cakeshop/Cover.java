@@ -24,7 +24,10 @@ public class Cover extends AppCompatActivity {
 
     }
     private void openMenu(){
-        Intent intent = new Intent(this, MainActivity.class);
+        Intent intent = new Intent(this, ItemListActivity.class);
+        Bundle b = new Bundle();
+        b.putString("category", "Cupcakes"); //Your id
+        intent.putExtras(b); //Put your id to your next Intent
         startActivity(intent);
     }
 }

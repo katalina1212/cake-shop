@@ -1,12 +1,10 @@
 package com.example.cakeshop;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 import android.util.Log;
-import android.view.View;
-import android.widget.Button;
 import android.widget.ListView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -17,21 +15,21 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity {
+public class ItemListActivity extends AppCompatActivity {
 
-    private ListView categoryList;
-    private MainActivity thisActivity = this;
+    private ListView itemList;
+    private ItemListActivity thisActivity = this;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        categoryList = findViewById(R.id.category_list);
+        setContentView(R.layout.activity_item_list);
+        itemList = findViewById(R.id.item_list);
 
         FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference myRef = database.getReference("categories");
+        DatabaseReference myRef = database.getReference(getIntent().getExtras().getString("category"));
 
-        final List<Category> items = new ArrayList<>();
+        final List<Item> items = new ArrayList<>();
 
         // myRef.setValue("Hello, World!");
         // Read from the database
@@ -41,14 +39,18 @@ public class MainActivity extends AppCompatActivity {
             public void onDataChange(DataSnapshot dataSnapshot) {
                 // This method is called once with the initial value and again
                 // whenever data at this location is updated.
-                for (DataSnapshot postSnapshot: dataSnapshot.getChildren()) {
-                    Category category = new Category (postSnapshot.getValue(String.class));
-                    items.add(category);
+                for (DataSnapshot postSnapshot : dataSnapshot.getChildren()) {
+
+                    Item item = new Item(postSnapshot.getKey(),
+                            postSnapshot.child("name").getValue(String.class),
+                            postSnapshot.child("description").getValue(String.class),
+                            postSnapshot.child("price").getValue(Integer.class));
+                    items.add(item);
 
                     // here you can access to name property like university.name
 
                 }
-                categoryList.setAdapter(new CategoryListItemAdapter(thisActivity,items ));
+                itemList.setAdapter(new ItemListItemAdapter(thisActivity, items));
             }
 
             @Override
