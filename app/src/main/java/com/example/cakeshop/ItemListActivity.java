@@ -27,7 +27,7 @@ public class ItemListActivity extends AppCompatActivity {
         itemList = findViewById(R.id.item_list);
 
         FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference myRef = database.getReference(getIntent().getExtras().getString("category"));
+        DatabaseReference myRef = database.getReference("categories/"+getIntent().getExtras().getString("category"));
 
         final List<Item> items = new ArrayList<>();
 

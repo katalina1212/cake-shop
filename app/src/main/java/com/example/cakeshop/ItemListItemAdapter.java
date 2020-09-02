@@ -31,8 +31,8 @@ public class ItemListItemAdapter extends ArrayAdapter<Item> {
         TextView itemName = convertView.findViewById(R.id.item_name);
         itemName.setText(currentItem.getName());
         TextView itemPrice = convertView.findViewById(R.id.item_price);
-        itemPrice.setText(currentItem.getPrice());
-        ImageView itemImage = convertView.findViewById(R.id.category_name);
+        itemPrice.setText(String.valueOf(currentItem.getPrice()));
+        ImageView itemImage = convertView.findViewById(R.id.image);
         Picasso.get().load(currentItem.getLink()).into(itemImage);
         return convertView;
     }
