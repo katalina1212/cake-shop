@@ -22,6 +22,7 @@ public class ShoppingCartActivity extends AppCompatActivity {
     private Button continueShopping;
     private EditText namePay;
     private EditText emailPay;
+
     private EditText phonePay;
     private EditText addressPay;
     private Button payCard;
