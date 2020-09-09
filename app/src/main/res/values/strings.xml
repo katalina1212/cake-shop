@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Cake shop</string>
+    <string name="titleCoverScreenTextView">Cake Shop</string>
 </resources>

@@ -50,7 +50,7 @@ public class ItemListActivity extends AppCompatActivity {
                     // here you can access to name property like university.name
 
                 }
-                itemList.setAdapter(new ItemListItemAdapter(thisActivity, items));
+                itemList.setAdapter(new ItemListItemAdapter(thisActivity, items,getIntent().getExtras().getString("category") ));
             }
 
             @Override

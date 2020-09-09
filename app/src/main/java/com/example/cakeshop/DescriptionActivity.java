@@ -2,8 +2,11 @@ package com.example.cakeshop;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -50,12 +53,13 @@ public class DescriptionActivity extends AppCompatActivity {
                 // whenever data at this location is updated.
 
                      item[0] = new Item(dataSnapshot.getKey(),
-                            dataSnapshot.child("name").getValue(String.class),
                             dataSnapshot.child("description").getValue(String.class),
+                            dataSnapshot.child("image").getValue(String.class),
                             dataSnapshot.child("price").getValue(Integer.class));
                      itemName.setText(item[0].getName());
                      itemPrice.setText(String.valueOf(item[0].getPrice()));
                      itemDescription.setText(item[0].getDescription());
+                     itemImage.setImageResource(R.drawable.birthday_carrot_cake);
 
 
 
@@ -68,7 +72,22 @@ public class DescriptionActivity extends AppCompatActivity {
                 // Failed to read value
                 Log.w("Firebase", "Failed to read value.", error.toException());
             }
+
         });
+
+        cartBtn.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {openShoppingCart(getIntent().getExtras().getString("category"),getIntent().getExtras().getString("item"));
+            }
+        });
+    }
+
+    private void openShoppingCart(String category, String item){
+        Intent intent = new Intent(this, ShoppingCartActivity.class);
+        Bundle b = new Bundle();
+        b.putString("item",item); //Your id
+        b.putString("category",category);
+        intent.putExtras(b); //Put your id to your next Intent
+        this.startActivity(intent);
     }
 
 }
