@@ -7,12 +7,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.example.cakeshop.Category;
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
@@ -30,7 +32,18 @@ public class CategoryListItemAdapter extends ArrayAdapter<Category> {
         convertView = LayoutInflater.from(getContext()).inflate(R.layout.category_list_item,parent,false);
         TextView categoryName = convertView.findViewById(R.id.category_name);
 
+        ImageView categoryImage = convertView.findViewById(R.id.category_image);
+        Picasso.with(parent.getContext()).load(currentItem.getImage()).into(categoryImage);
+
+
         categoryName.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                openMenu(getContext(),currentItem.getName() );
+
+            }
+        });
+
+        categoryImage.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 openMenu(getContext(),currentItem.getName() );
 

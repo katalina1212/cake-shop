@@ -1,4 +1,37 @@
 <resources>
     <string name="app_name">Cake shop</string>
     <string name="titleCoverScreenTextView">Cake Shop</string>
+    <string name="ClickForMenuButtonText">Click for menu</string>
+    <string name="ItemDescriptionItemNameTextView">item name</string>
+    <string name="ItemDescriptionItemPriceTextView">Item Price</string>
+    <string name="ItemDescriptionDescriptionTextView">Lorem Ipsum</string>
+    <string name="LoginScreenEmailEditText">Email</string>
+    <string name="LoginScreenPasswordEditText">Password</string>
+    <string name="LoginScreenRegisterOptionTextView">You don\'t have an account? Register now.</string>
+    <string name="LoginEntryScreenLoginTextview">Login</string>
+    <string name="LoginEntryScreenQuestionTextView">Login with your cake Shop account or register</string>
+    <string name="PaymentScreenTotalAmountTextView">Total amount</string>
+    <string name="paymentScreenPaymentTypeTextView">Payment type</string>
+    <string name="paymentScreenVisaCardButton">Visa Card</string>
+    <string name="paymentScreenTotalAmountEditText" />
+    <string name="PaymentScreenMasterCardButton">MasterCard</string>
+    <string name="PaymentScreenCardholderNameEditText">Cardholder Name</string>
+    <string name="PaymentScreenCardNumberEditText">Card number</string>
+    <string name="PaymentScreenValidUntilEditText">Valid until</string>
+    <string name="PaymentScreenCvvEditText">CVV</string>
+    <string name="PaymentScreenPayEditText">Pay</string>
+    <string name="RegisterScreenEmailEditText">Email</string>
+    <string name="RegisterScreenPasswordEditText">Password</string>
+    <string name="RegisterScreenReTypePasswordEditText">Re-type password</string>
+    <string name="RegisterScreenRegisterButton">Register</string>
+    <string name="RegisterScreenLoginQuestionTextView">Already have an account? Log in now.</string>
+    <string name="ShoppingCartScreenCartSubtotal" />
+    <string name="ShoppingCartScreenSubtotalTextView">Cart subtotal</string>
+    <string name="ShoppinCartScreenContinueShoppingButton">Continue Shopping</string>
+    <string name="ShoppingCartScreenPayNameEditText">Name</string>
+    <string name="ShoppingCartScreenPayEmailEditText">Email</string>
+    <string name="ShoppingCartScreenPayPhoneNumberEditText">Phone number</string>
+    <string name="ShoppingCartScreenPayAddressEditText">Address</string>
+    <string name="ShoppingCartScreenPayByCardButton">Pay by card</string>
+    <string name="TrackingScreenInformationTextView">Tracking Information</string>
 </resources>

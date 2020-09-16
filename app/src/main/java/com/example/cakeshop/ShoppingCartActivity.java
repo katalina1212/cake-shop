@@ -2,8 +2,10 @@ package com.example.cakeshop;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -14,6 +16,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.squareup.picasso.Picasso;
 
 public class ShoppingCartActivity extends AppCompatActivity {
 
@@ -27,11 +30,20 @@ public class ShoppingCartActivity extends AppCompatActivity {
     private EditText addressPay;
     private Button payCard;
 
+    private ShoppingCartActivity thisActivity = this;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_shopping_cart);
-        shoppingCartImage.findViewById(R.id)
+        shoppingCartImage = findViewById(R.id.shopping_cart_image);
+        cartSubtotal = findViewById(R.id.cart_subtotal);
+        continueShopping = findViewById(R.id.continue_shopping);
+        namePay = findViewById(R.id.name_pay);
+        emailPay = findViewById(R.id.email_pay);
+        phonePay = findViewById(R.id.phone_pay);
+        addressPay = findViewById(R.id.address_pay);
+        payCard = findViewById(R.id.pay_card);
 
 
 
@@ -53,10 +65,10 @@ public class ShoppingCartActivity extends AppCompatActivity {
                         dataSnapshot.child("description").getValue(String.class),
                         dataSnapshot.child("image").getValue(String.class),
                         dataSnapshot.child("price").getValue(Integer.class));
-                itemName.setText(item[0].getName());
-                itemPrice.setText(String.valueOf(item[0].getPrice()));
-                itemDescription.setText(item[0].getDescription());
-                itemImage.setImageResource(R.drawable.birthday_carrot_cake);
+                Picasso.with(thisActivity).load(item[0].getLink()).into(shoppingCartImage);
+                String s1 = item[0].getName()+" "+item[0].getPrice();
+                cartSubtotal.setText(s1);
+
 
 
 
@@ -72,7 +84,16 @@ public class ShoppingCartActivity extends AppCompatActivity {
 
         });
 
-    }
+        continueShopping.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                openCategories();
+            }
+        });
 
+    }
+    private void openCategories(){
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+    }
 
 }

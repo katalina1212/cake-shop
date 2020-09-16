@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
                 // This method is called once with the initial value and again
                 // whenever data at this location is updated.
                 for (DataSnapshot postSnapshot: dataSnapshot.getChildren()) {
-                    Category category = new Category (postSnapshot.getKey());
+                    Category category = new Category (postSnapshot.getKey(),postSnapshot.child("image").getValue(String.class));
                     items.add(category);
 
                     // here you can access to name property like university.name

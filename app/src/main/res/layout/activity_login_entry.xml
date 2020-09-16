@@ -19,20 +19,20 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="69dp"
-        android:layout_height="62dp"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
         android:layout_marginTop="64dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar3"
-        app:srcCompat="@android:drawable/btn_star_big_on" />
+        app:srcCompat="@drawable/cupcake_logo" />
 
     <TextView
         android:id="@+id/login_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="64dp"
-        android:text="Login"
+        android:layout_marginTop="32dp"
+        android:text="@string/LoginEntryScreenLoginTextview"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -44,7 +44,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:autoText="false"
-        android:text="Login with your cake Shop account or register"
+        android:text="@string/LoginEntryScreenQuestionTextView"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -52,6 +52,7 @@
 
     <Button
         android:id="@+id/login_btn"
+        style="@style/LoginEntryScreenLoginButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="164dp"
@@ -62,6 +63,7 @@
 
     <Button
         android:id="@+id/register_btn"
+        style="@style/LoginEntryScreenRegisterButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Register"

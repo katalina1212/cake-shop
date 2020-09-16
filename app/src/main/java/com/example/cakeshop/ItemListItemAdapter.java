@@ -13,7 +13,6 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import com.example.cakeshop.Category;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
@@ -42,8 +41,9 @@ public class ItemListItemAdapter extends ArrayAdapter<Item> {
         itemName.setText(currentItem.getName());
         TextView itemPrice = convertView.findViewById(R.id.item_price);
         itemPrice.setText(String.valueOf(currentItem.getPrice()));
-        ImageView itemImage = convertView.findViewById(R.id.image);
-        Picasso.get().load(currentItem.getLink()).into(itemImage);
+        ImageView itemImage = convertView.findViewById(R.id.list_item_image);
+
+        Picasso.with(parent.getContext()).load(currentItem.getLink()).into(itemImage);
 
         itemName.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {

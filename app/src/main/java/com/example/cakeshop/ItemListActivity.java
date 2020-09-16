@@ -41,9 +41,12 @@ public class ItemListActivity extends AppCompatActivity {
                 // whenever data at this location is updated.
                 for (DataSnapshot postSnapshot : dataSnapshot.getChildren()) {
 
+                    if(postSnapshot.getKey().equals("image")){
+                        continue;
+                    }
                     Item item = new Item(postSnapshot.getKey(),
-                            postSnapshot.child("name").getValue(String.class),
                             postSnapshot.child("description").getValue(String.class),
+                            postSnapshot.child("image").getValue(String.class),
                             postSnapshot.child("price").getValue(Integer.class));
                     items.add(item);
 
