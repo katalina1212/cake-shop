@@ -2,10 +2,12 @@ package com.example.cakeshop;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -29,7 +31,14 @@ public class LoginActivity extends AppCompatActivity {
 
 
        if(l1==0){
-            System.out.println("Username cannot be empty");
+           Context context = getApplicationContext();
+           CharSequence text = "Username cannot be empty";
+           int duration = Toast.LENGTH_SHORT;
+
+           Toast toast = Toast.makeText(context, text, duration);
+           toast.show();
+
+
        }else{
            Intent intent = new Intent (this, PaymentActivity.class);
            startActivity(intent);

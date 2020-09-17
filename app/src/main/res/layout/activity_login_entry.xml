@@ -13,6 +13,7 @@
         android:background="?attr/colorPrimary"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
+        android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -33,7 +34,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:text="@string/LoginEntryScreenLoginTextview"
-        android:textSize="30sp"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
@@ -42,11 +43,12 @@
         android:id="@+id/login_first_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="16dp"
         android:autoText="false"
         android:text="@string/LoginEntryScreenQuestionTextView"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/login_text" />
 
@@ -57,6 +59,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="164dp"
         android:text="Login"
+        android:textSize="18sp"
         app:layout_constraintEnd_toStartOf="@+id/register_btn"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/login_first_text" />
@@ -67,6 +70,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Register"
+        android:textSize="18sp"
         app:layout_constraintBaseline_toBaselineOf="@+id/login_btn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/login_btn" />

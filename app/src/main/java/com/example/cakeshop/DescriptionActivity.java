@@ -16,6 +16,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,6 +28,8 @@ public class DescriptionActivity extends AppCompatActivity {
     private TextView itemPrice;
     private TextView itemDescription;
     private Button cartBtn;
+
+    private DescriptionActivity thisActivity = this;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,7 +62,8 @@ public class DescriptionActivity extends AppCompatActivity {
                      itemName.setText(item[0].getName());
                      itemPrice.setText(String.valueOf(item[0].getPrice()));
                      itemDescription.setText(item[0].getDescription());
-                     itemImage.setImageResource(R.drawable.birthday_carrot_cake);
+
+                Picasso.with(thisActivity).load(item[0].getLink()).into(itemImage);
 
 
 

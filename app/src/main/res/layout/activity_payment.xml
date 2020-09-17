@@ -13,6 +13,7 @@
         android:background="?attr/colorPrimary"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
+        android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -22,40 +23,27 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:layout_marginEnd="246dp"
-        android:layout_marginRight="246dp"
+        android:layout_marginBottom="64dp"
         android:text="@string/PaymentScreenTotalAmountTextView"
         android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/payment_type"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar5" />
-
-    <EditText
-        android:id="@+id/total_amount_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="186dp"
-        android:layout_marginRight="186dp"
-        android:ems="10"
-        android:inputType="@string/paymentScreenTotalAmountEditText"
-        android:text="@string/paymentScreenTotalAmountEditText"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/total_amount" />
 
     <TextView
         android:id="@+id/payment_type"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
         android:layout_marginEnd="246dp"
         android:layout_marginRight="246dp"
+        android:layout_marginBottom="64dp"
         android:text="@string/paymentScreenPaymentTypeTextView"
         android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/visa_btn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/total_amount_text" />
+        app:layout_constraintTop_toBottomOf="@+id/total_amount" />
 
     <Button
         android:id="@+id/visa_btn"
@@ -63,6 +51,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:text="@string/paymentScreenVisaCardButton"
+        android:textSize="18sp"
         app:layout_constraintEnd_toStartOf="@+id/master_btn"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/payment_type" />
@@ -72,6 +61,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/PaymentScreenMasterCardButton"
+        android:textSize="18sp"
         app:layout_constraintBaseline_toBaselineOf="@+id/visa_btn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/visa_btn" />
@@ -82,8 +72,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:ems="10"
+        android:hint="@string/PaymentScreenCardholderNameEditText"
         android:inputType="textPersonName"
-        android:text="@string/PaymentScreenCardholderNameEditText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/visa_btn" />
@@ -94,8 +84,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:ems="10"
+        android:hint="@string/PaymentScreenCardNumberEditText"
         android:inputType="textPersonName"
-        android:text="@string/PaymentScreenCardNumberEditText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cardholder_text" />
@@ -106,8 +96,8 @@
         android:layout_height="50dp"
         android:layout_marginTop="36dp"
         android:ems="10"
+        android:hint="@string/PaymentScreenValidUntilEditText"
         android:inputType="textPersonName"
-        android:text="@string/PaymentScreenValidUntilEditText"
         app:layout_constraintEnd_toStartOf="@+id/cvv_text"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cardnumber_text" />
@@ -118,8 +108,8 @@
         android:layout_height="50dp"
         android:layout_marginTop="36dp"
         android:ems="10"
+        android:hint="@string/PaymentScreenCvvEditText"
         android:inputType="textPersonName"
-        android:text="@string/PaymentScreenCvvEditText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/valid_text"
         app:layout_constraintTop_toBottomOf="@+id/cardnumber_text" />
@@ -130,6 +120,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="64dp"
         android:text="@string/PaymentScreenPayEditText"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/valid_text" />

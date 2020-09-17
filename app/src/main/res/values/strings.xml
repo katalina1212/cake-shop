@@ -34,4 +34,6 @@
     <string name="ShoppingCartScreenPayAddressEditText">Address</string>
     <string name="ShoppingCartScreenPayByCardButton">Pay by card</string>
     <string name="TrackingScreenInformationTextView">Tracking Information</string>
+    <string name="CoverScreenSeeUsOnMapButton">See us on map</string>
+    <string name="TrackingScreenThankYouTextView">Thank you for shopping!</string>
 </resources>
