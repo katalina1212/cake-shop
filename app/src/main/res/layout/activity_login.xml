@@ -26,7 +26,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar2"
-        app:srcCompat="@drawable/cupcake_logo" />
+        app:srcCompat="@drawable/logo2" />
 
     <EditText
         android:id="@+id/email_text"
@@ -34,8 +34,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="86dp"
         android:ems="10"
-        android:inputType="@string/LoginScreenEmailEditText"
-        android:text="Email"
+        android:hint="@string/LoginScreenEmailEditText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView3" />
@@ -46,8 +45,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:ems="10"
-        android:inputType="@string/LoginScreenPasswordEditText"
-        android:text="Password"
+        android:hint="@string/LoginScreenPasswordEditText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/email_text" />

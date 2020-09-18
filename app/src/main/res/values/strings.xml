@@ -36,4 +36,6 @@
     <string name="TrackingScreenInformationTextView">Tracking Information</string>
     <string name="CoverScreenSeeUsOnMapButton">See us on map</string>
     <string name="TrackingScreenThankYouTextView">Thank you for shopping!</string>
+    <string name="title_activity_tracking_maps">Map</string>
+
 </resources>

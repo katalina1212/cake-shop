@@ -72,7 +72,7 @@ public class PaymentActivity extends AppCompatActivity {
 
 
         } else {
-            Intent intent = new Intent(this, TrackingActivity.class);
+            Intent intent = new Intent(this, TrackingMapsActivity.class);
            /* Bundle b = new Bundle();
             b.putDouble("price", item[0].getPrice()); //Your id
             intent.putExtras(b); //Put your id to your next Intent */

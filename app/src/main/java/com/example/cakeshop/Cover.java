@@ -42,7 +42,7 @@ public class Cover extends AppCompatActivity {
     }
 
     private void openConnectActivity(){
-        Intent intent = new Intent(this, ConnectActivity.class);
+        Intent intent = new Intent(this, MapsActivity.class);
        /* Bundle b = new Bundle();
         b.putString("category", "Cupcakes"); //Your id
         intent.putExtras(b); //Put your id to your next Intent */

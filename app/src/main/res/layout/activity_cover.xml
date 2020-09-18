@@ -4,13 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/mac6"
     tools:context=".Cover">
 
     <Button
         android:id="@+id/click_menu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="32dp"
+        android:layout_marginBottom="16dp"
         android:text="@string/ClickForMenuButtonText"
         android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/see_us_on_map"
@@ -22,9 +23,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
+        android:fontFamily="cursive"
         android:text="@string/titleCoverScreenTextView"
-        android:textColor="@android:color/holo_blue_dark"
-        android:textSize="48sp"
+        android:textColor="@android:color/background_dark"
+        android:textSize="44sp"
         android:textStyle="bold|italic"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -32,19 +34,19 @@
 
     <ImageView
         android:id="@+id/imageView4"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
         android:layout_marginTop="24dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/cupcake_logo" />
+        app:srcCompat="@drawable/logo2" />
 
     <Button
         android:id="@+id/see_us_on_map"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="64dp"
+        android:layout_marginBottom="16dp"
         android:text="@string/CoverScreenSeeUsOnMapButton"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"

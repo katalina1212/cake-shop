@@ -26,7 +26,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar4"
-        app:srcCompat="@drawable/cupcake_logo" />
+        app:srcCompat="@drawable/logo2" />
 
     <EditText
         android:id="@+id/email_text"
@@ -34,8 +34,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:ems="10"
+        android:hint="@string/RegisterScreenEmailEditText"
         android:inputType="textPersonName"
-        android:text="@string/RegisterScreenEmailEditText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView2" />
@@ -46,20 +46,20 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:ems="10"
+        android:hint="@string/RegisterScreenPasswordEditText"
         android:inputType="textPersonName"
-        android:text="@string/RegisterScreenPasswordEditText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/email_text" />
 
     <EditText
-        android:id="@+id/editText6"
+        android:id="@+id/re_password_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:ems="10"
+        android:hint="@string/RegisterScreenReTypePasswordEditText"
         android:inputType="textPersonName"
-        android:text="@string/RegisterScreenReTypePasswordEditText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/password_text" />
@@ -73,7 +73,7 @@
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText6" />
+        app:layout_constraintTop_toBottomOf="@+id/re_password_text" />
 
     <TextView
         android:id="@+id/login_info_text"

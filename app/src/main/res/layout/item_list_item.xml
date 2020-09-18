@@ -3,12 +3,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="200dp">
+    android:layout_height="180dp"
+    android:background="@drawable/sugar1">
 
     <ImageView
         android:id="@+id/list_item_image"
         android:layout_width="180dp"
-        android:layout_height="200dp"
+        android:layout_height="160dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/cupcake_logo"
